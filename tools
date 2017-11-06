@@ -1,0 +1,3 @@
+#!/bin/bash
+aspell -c main -l "en"
+sort main | uniq > main.fix
