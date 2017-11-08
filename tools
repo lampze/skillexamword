@@ -1,4 +1,4 @@
 #!/bin/bash
 aspell -c main -l "en"
 awk '!x[$0]++' main > main.fix
-diff main main.fix && rm -rf main.fix main.bak || vimdiff main main.fix
+diff main main.fix && rm -f main.fix || vimdiff main main.fix
