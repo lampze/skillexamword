@@ -1,4 +1,10 @@
 #!/bin/bash
-aspell -c main -l "en"
-awk '!x[$0]++' main > main.fix
-diff main main.fix && rm -f main.fix
+if [ "$1" = "" ]
+then
+    filename="main"
+else
+    filename="$1"
+fi
+aspell -c $filename -l "en"
+awk '!x[$0]++' $filename > ${filename}.fix
+diff $filename ${filename}.fix && rm -f ${filename}.fix
